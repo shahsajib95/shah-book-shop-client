@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+}
+.color {
+  color: #6946F4;
+}
+.bg-color {
+  background-color: #6946F4;
+  color: #fff
+}
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+.toast{
+ margin-top: 90px;
+}
+.top-margin{
+  margin-top: 100px;
+}
+.page-content-wrapper{
+    width: 100%;
+}
+.admin-content {
+  height: 100%;
+  width: 100%;
+}
+
+.upload-btn {
+  position: relative;
+  overflow: hidden;
+}
+.file_input_with_replacement::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.file_input_with_replacement {
+  position: absolute;
+  font-size: 50px;
+  opacity: 0;
+  right: 0;
+  top: 0;
+}
+.add-book-form .form-label{
+    font-weight: 700;
+}

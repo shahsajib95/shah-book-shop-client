@@ -1,0 +1,10 @@
+.admin-nav {
+  height: 100vh;
+  width: 20%;
+}
+
+@media only screen and (max-width: 991px) {
+  .admin-nav span {
+    display: none;
+  }
+}

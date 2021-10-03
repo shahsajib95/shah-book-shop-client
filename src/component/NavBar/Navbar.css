@@ -1,0 +1,6 @@
+@media only screen and (max-width: 991px) {
+  .navbar .gap-5 {
+    grid-gap: 10px !important;
+    gap: 10px !important;
+  }
+}
