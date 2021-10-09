@@ -1,4 +1,4 @@
-export const baseUrl = 'http://localhost:5000'
+export const baseUrl = 'https://shah-book-shop-server.herokuapp.com'
 
 export const getData = async (url, token) => {
     const res = await fetch(`${baseUrl}/api/${url}`, {

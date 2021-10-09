@@ -3,17 +3,21 @@ import { DataContext } from "../../store/globaStore";
 import CheckOutDetails from "./CheckOutDetails";
 import { BiCart } from "react-icons/bi";
 import { postData } from "../../component/utils/api/api";
+import { useHistory } from "react-router";
 
 const CheckOut = () => {
+  const history = useHistory()
   const { state, dispatch } = useContext(DataContext);
   const { cart, auth } = state;
   const total = cart.reduce((total, book) => total + book.price, 0);
   const handleCheckout = async () =>{
+    dispatch({ type: 'NOTIFY', payload: {loading: true} })
     const res = await postData('user/postOrder', cart, auth.token)
+    dispatch({ type: 'NOTIFY', payload: {loading: false} })
     if(res.err) return dispatch({ type: 'NOTIFY', payload: {error: res.err} })
     dispatch({ type: 'NOTIFY', payload: {success: res.msg} })
     localStorage.removeItem('cart_item')
-    window.location = "/orders"
+    history.push("/orders")
     return dispatch({ type: "ADD_CART", payload: [] })
   }
   return (

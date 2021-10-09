@@ -1,8 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import ManageBooks from "./page/Admin/ManageBooks/ManageBooks";
 import PrivateRoute from "./component/PrivateRoute/PrivateRoute";
@@ -16,6 +12,8 @@ import CheckOut from "./page/CheckOut/CheckOut";
 import Login from "./page/Login/Login";
 import Register from "./page/Register/Register";
 import Order from "./page/Order/Order";
+import Footer from "./component/Footer/Footer";
+import NotFound from "./page/NotFound/NotFound";
 
 function App() {
   return (
@@ -26,14 +24,17 @@ function App() {
           <Route exact path="/">
             <NavBar />
             <Books />
+            <Footer />
           </Route>
           <PrivateRoute path="/CheckOut">
             <NavBar />
             <CheckOut />
+            <Footer />
           </PrivateRoute>
           <PrivateRoute path="/Orders">
             <NavBar />
             <Order />
+            <Footer />
           </PrivateRoute>
 
           <Route path="/login">
@@ -55,7 +56,11 @@ function App() {
             <EditBooks />
           </PrivateRoute>
 
-          <Route path="*">Error</Route>
+          <Route path="*">
+            <NavBar />
+            <NotFound />
+            <Footer />
+          </Route>
         </Switch>
       </Router>
     </DataProvider>

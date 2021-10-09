@@ -5,7 +5,6 @@ import { DataContext } from "../../store/globaStore";
 const PrivateRoute = ({ children, ...rest }) => {
   const { state } = useContext(DataContext);
   const { auth } = state;
-  console.log(auth)
   return (
     <div>
       <Route
