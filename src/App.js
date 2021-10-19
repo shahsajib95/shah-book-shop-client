@@ -21,11 +21,11 @@ function App() {
       <Router>
         <Notify />
         <Switch>
-          <Route exact path="/">
+          <PrivateRoute exact path="/">
             <NavBar />
             <Books />
             <Footer />
-          </Route>
+          </PrivateRoute>
           <PrivateRoute path="/CheckOut">
             <NavBar />
             <CheckOut />

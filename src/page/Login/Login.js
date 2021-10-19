@@ -51,7 +51,7 @@ const Login = () => {
       className="top-margin container mx-auto form card p-5"
       style={{ width: "500px" }}
     >
-      <h1>Login</h1>
+      <h1>Login to buy Books</h1>
       {error && <span>*{error}</span>}
       {errors.email && <div className="form-text">*Email is required</div>}
       {errors.password && (
